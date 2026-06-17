@@ -52,7 +52,7 @@ stow */
 Install only selected packages:
 
 ```sh
-stow zsh starship git npm
+stow zsh starship git go npm
 ```
 
 If the repository is not under `$HOME`, pass the target explicitly:

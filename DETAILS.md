@@ -11,6 +11,7 @@ Current packages:
   PATH setup, and binary bootstrapping through `zinit`.
 - `starship`: prompt configuration and Nerd Font symbols.
 - `git`: global Git defaults.
+- `go`: Go toolchain environment and workspace defaults.
 - `fastfetch`: compact system information output.
 - `npm`: npm and pnpm release-age settings.
 - `containers`: containers/podman engine defaults.
@@ -91,6 +92,9 @@ The zsh config:
 - Sets `EDITOR`, `VISUAL`, and `SUDO_EDITOR` to `nano`.
 - Sets `PAGER` to `bat`.
 - Enables shared, deduplicated history with a large history size.
+- Sets `GOENV` to `~/.config/go/env`, sets `GOPATH` to `~/.go-workspace` by
+  default, sets `GOBIN` to `~/.go-workspace/bin` by default, and adds `GOBIN`
+  to `PATH` for tools installed with `go install`.
 - Adds `PNPM_HOME` to `PATH`.
 - On macOS/Homebrew, symlinks GNU tools from Homebrew prefixes into
   `~/.local/bin` once.
@@ -104,6 +108,17 @@ The zsh config:
 Sets `main` as the default branch, configures the global user, enables push
 auto-upstream setup, tightens whitespace behavior, and rewrites `gh:` URLs to
 `git@github.com:`.
+
+### `go`
+
+Stows the native Go environment file to:
+
+```text
+~/.config/go/env
+```
+
+It sets `CGO_ENABLED=1`. The shell config points `GOENV` at this file and keeps
+the Go workspace at `~/.go-workspace` through `GOPATH` and `GOBIN`.
 
 ### `starship`
 
