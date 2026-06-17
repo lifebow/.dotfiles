@@ -2,12 +2,15 @@
 
 export MANWIDTH=999
 
-export EDITOR="micro"
+export EDITOR="nano"
 export PAGER="bat"
-export VISUAL="micro"
-export SUDO_EDITOR="micro"
+export VISUAL="nano"
+export SUDO_EDITOR="nano"
 
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME"/starship/starship.toml
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export HOMEBREW_UPGRADE_GREEDY=1
 

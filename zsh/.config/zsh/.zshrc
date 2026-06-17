@@ -15,9 +15,28 @@ zinit wait lucid light-mode id-as depth'1' for \
 
 zinit id-as from'gh-r' lbin'!' completions for \
     lsd-rs/lsd \
-    micro-editor/micro \
+    @sharkdp/fd \
     mv'**/bat.zsh -> _bat' \
         @sharkdp/bat
+
+zinit for \
+    id-as \
+    from'gh-r' \
+    lbin'**/rg -> rg' \
+    completions \
+    @BurntSushi/ripgrep
+
+zinit for \
+    id-as \
+    from'gh-r' \
+    atclone'
+        ./**/uv generate-shell-completion zsh > _uv; \
+        ./**/uvx --generate-shell-completion zsh > _uvx;
+    ' \
+    atpull'%atclone' \
+    lbin'**/uv -> uv' \
+    lbin'**/uvx -> uvx' \
+    @astral-sh/uv
 
 zinit for \
     id-as \

@@ -9,12 +9,6 @@
         },
         "separator": ""
     },
-    "logo": {
-        "type": "kitty-direct",
-        "source": "~/.config/fastfetch/albedo.png",
-        "width": 20,
-        "height": 10
-    },
     "modules": [
         "break",
         {
