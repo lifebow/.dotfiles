@@ -82,7 +82,7 @@ Log out and back in after `chsh`, or open a new terminal session.
 Clone this repository into `$HOME/.dotfiles`:
 
 ```sh
-git -C "$HOME" clone https://github.com/vokhactri/.dotfiles.git .dotfiles
+git -C "$HOME" clone git@github.com:lifebow/.dotfiles.git .dotfiles
 cd "$HOME/.dotfiles"
 ```
 
