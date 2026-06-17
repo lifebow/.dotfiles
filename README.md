@@ -95,6 +95,12 @@ chsh -s /bin/zsh
 See [DETAILS.md](DETAILS.md) for package notes, zsh layout, bootstrapped tools,
 and troubleshooting.
 
+Go workspace:
+
+```text
+~/.go-workspace
+```
+
 ## Credit
 
 - [vokhactri/.dotfiles](https://github.com/vokhactri/.dotfiles)

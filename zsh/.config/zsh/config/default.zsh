@@ -14,9 +14,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export HOMEBREW_UPGRADE_GREEDY=1
 
-export GOENV="${GOENV:-$XDG_CONFIG_HOME/go/env}"
-export GOPATH="${GOPATH:-$HOME/.go-workspace}"
-export GOBIN="${GOBIN:-$GOPATH/bin}"
+export GOENV="$XDG_CONFIG_HOME/go/env"
+export GOPATH="$HOME/.go-workspace"
+export GOBIN="$GOPATH/bin"
 case ":$PATH:" in
   *":$GOBIN:"*) ;;
   *) export PATH="$GOBIN:$PATH" ;;
