@@ -27,4 +27,6 @@ HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 HISTSIZE=5000000
 SAVEHIST=5000000
 
+ZSH_AUTOSUGGEST_HISTORY_IGNORE='lsls'
+
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always --icon=always $realpath'

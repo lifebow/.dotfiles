@@ -11,6 +11,7 @@ Current packages:
   PATH setup, and binary bootstrapping through `zinit`.
 - `starship`: prompt configuration and Nerd Font symbols.
 - `git`: global Git defaults.
+- `ghostty`: Ghostty terminal appearance and macOS input behavior.
 - `go`: Go toolchain environment and workspace defaults.
 - `fastfetch`: compact system information output.
 - `npm`: npm and pnpm release-age settings.
@@ -95,6 +96,8 @@ The zsh config:
 - Sets `GOENV` to `~/.config/go/env`, sets `GOPATH` to `~/.go-workspace` by
   default, sets `GOBIN` to `~/.go-workspace/bin` by default, and adds `GOBIN`
   to `PATH` for tools installed with `go install`.
+- Falls back from `TERM=xterm-ghostty` to `TERM=xterm-256color` when the
+  current machine does not have Ghostty terminfo installed.
 - Adds `PNPM_HOME` to `PATH`.
 - On macOS/Homebrew, symlinks GNU tools from Homebrew prefixes into
   `~/.local/bin` once.
@@ -119,6 +122,21 @@ Stows the native Go environment file to:
 
 It sets `CGO_ENABLED=1`. The shell config points `GOENV` at this file and keeps
 the Go workspace at `~/.go-workspace` through `GOPATH` and `GOBIN`.
+
+### `ghostty`
+
+Sets JetBrains Mono Nerd Font, the SpaceGray Eighties theme, and a bar cursor.
+The macOS options keep Vietnamese and other IME/input workflows predictable:
+
+- `shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo`: enables
+  Ghostty SSH compatibility, including `TERM` fallback and remote terminfo
+  installation where possible.
+- `macos-option-as-alt = false`: keeps Option-based Unicode input behavior.
+- `macos-auto-secure-input = false`: avoids automatic Secure Input interfering
+  with keyboard-event based input tools.
+- `macos-secure-input-indication = true`: shows when Secure Input is active.
+- `macos-hidden = never`: keeps Ghostty visible to macOS so keyboard layout
+  changes remain automatic.
 
 ### `starship`
 

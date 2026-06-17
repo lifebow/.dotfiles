@@ -1,0 +1,10 @@
+font-family = "JetBrainsMono Nerd Font"
+theme = "SpaceGray Eighties"
+cursor-style = bar
+
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+
+macos-option-as-alt = false
+macos-auto-secure-input = false
+macos-secure-input-indication = true
+macos-hidden = never

@@ -14,6 +14,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export HOMEBREW_UPGRADE_GREEDY=1
 
+if [[ "$TERM" == "xterm-ghostty" ]] && ! infocmp -x "$TERM" >/dev/null 2>&1; then
+  export TERM="xterm-256color"
+fi
+
 export GOENV="$XDG_CONFIG_HOME/go/env"
 export GOPATH="$HOME/.go-workspace"
 export GOBIN="$GOPATH/bin"
