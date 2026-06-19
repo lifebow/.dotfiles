@@ -166,9 +166,6 @@ symbol = " "
 [pijul_channel]
 symbol = " "
 
-[pixi]
-symbol = "󰏗 "
-
 [python]
 symbol = " "
 
@@ -189,9 +186,6 @@ symbol = " "
 
 [swift]
 symbol = " "
-
-[xmake]
-symbol = " "
 
 [zig]
 symbol = " "
