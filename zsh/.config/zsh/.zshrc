@@ -55,9 +55,18 @@ zinit for \
     lbin'!' \
     @ajeetdsouza/zoxide
 
+if [[ "$OSTYPE" == darwin* ]]; then
+    _fnm_asset='fnm-macos.zip'
+else
+    case "$(uname -m)" in
+        aarch64|arm64) _fnm_asset='fnm-arm64.zip' ;;
+        *) _fnm_asset='fnm-linux.zip' ;;
+    esac
+fi
 zinit for \
     id-as \
     from'gh-r' \
+    bpick"$_fnm_asset" \
     atclone'
         ./fnm env --use-on-cd --shell zsh > init.zsh; \
         ./fnm completions --shell zsh > _fnm;
@@ -66,6 +75,7 @@ zinit for \
     blockf \
     sbin'fnm' \
     @Schniz/fnm
+unset _fnm_asset
 
 zinit for \
     id-as \
